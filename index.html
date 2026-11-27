@@ -83,15 +83,32 @@ navbar_title: Home
                 <div class="card border-0 shadow-sm bg-white">
                     <div class="card-body p-4">
                         <h3 class="section-title">Services</h3>
-                        <div class="row">
-                            {% for role in site.data.services.roles %}
-                            <div class="col-md-4 mb-3">
-                                <h6 class="subsection-title">{{ role.name }}</h6>
-                                <ul class="list small pl-3 mb-0">
-                                    {% for item in role.items %}
-                                    <li>
-                                        {{ item.venue }}{% if item.date %}, {{ item.date }}{% endif %}
-                                    </li>
+                        <ul class="list-unstyled mb-0 service-list">
+                            {% for item in site.data.services.leadership %}
+                            <li class="media item-row">
+                                <div class="item-icon"><i class="fas {{ item.icon | default: 'fa-handshake' }}"></i></div>
+                                <div class="media-body">
+                                    <div class="service-role">{{ item.role }}</div>
+                                    <div class="d-flex">
+                                        <div>
+                                            {% if item.url %}<a href="{{ item.url }}" target="_blank">{{ item.title }} <i class="fas fa-arrow-up-right-from-square service-link-icon"></i></a>{% else %}{{ item.title }}{% endif %}
+                                        </div>
+                                        <div class="ml-auto no-break item-date">{{ item.date }}</div>
+                                    </div>
+                                    {% if item.venue or item.note %}
+                                    <div class="small text-muted">{{ item.venue }}{% if item.venue and item.note %} &middot; {% endif %}{{ item.note }}</div>
+                                    {% endif %}
+                                </div>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        <div class="row service-reviewing">
+                            {% for group in site.data.services.reviewing %}
+                            <div class="col-md-6 mt-3">
+                                <h6 class="subsection-title">{{ group.name }}</h6>
+                                <ul class="list-unstyled tag-list mb-0">
+                                    {% for item in group.items %}
+                                    <li{% if item.full %} title="{{ item.full }}"{% endif %}>{{ item.venue }}</li>
                                     {% endfor %}
                                 </ul>
                             </div>

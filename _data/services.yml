@@ -1,8 +1,25 @@
-roles:
-- name: Session Chair
-  items:
-  - venue: IJCAI
-    date: 2025
+# Organizing and editorial roles, shown as a highlighted list.
+leadership:
+- role: Guest Editor
+  title: "Special Collection on AI for Drug Discovery"
+  venue: Communications AI & Computing, Nature Portfolio
+  date: 2027
+  url: https://www.nature.com/collections/ibafcfddec
+  icon: fa-pen-nib
+- role: Workshop Organizer
+  title: "AI for Drug Discovery: Bridging the Translation Gap"
+  venue: NeurIPS 2026 Workshop
+  note: Co-organized with Prof. Ivor Tsang, Dr. Yu Xie and Prof. Steve Ling
+  date: 2026
+  url: https://ai4dd-neurips2026.github.io/
+  icon: fa-people-group
+- role: Session Chair
+  title: International Joint Conference on Artificial Intelligence (IJCAI)
+  date: 2025
+  icon: fa-chalkboard-user
+
+# Reviewing, shown as compact tags.
+reviewing:
 - name: Conference Reviewer
   items:
   - venue: ICML
@@ -13,10 +30,15 @@ roles:
   - venue: ICONIP
 - name: Journal Reviewer
   items:
-  - venue: IEEE Transactions on Information Theory
-  - venue: IEEE Transactions on Pattern Analysis and Machine Intelligence
-  - venue: IEEE Transactions on Neural Networks and Learning Systems
+  - venue: IEEE TIT
+    full: IEEE Transactions on Information Theory
+  - venue: IEEE TPAMI
+    full: IEEE Transactions on Pattern Analysis and Machine Intelligence
+  - venue: IEEE TNNLS
+    full: IEEE Transactions on Neural Networks and Learning Systems
   - venue: Machine Learning
-  - venue: IEEE Transactions on Big Data
-  - venue: IEEE Transactions on Emerging Topics in Computational Intelligence
+  - venue: IEEE TBD
+    full: IEEE Transactions on Big Data
+  - venue: IEEE TETCI
+    full: IEEE Transactions on Emerging Topics in Computational Intelligence
   - venue: Neurocomputing
