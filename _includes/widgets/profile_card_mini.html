@@ -1,4 +1,4 @@
-<div class="row sticky-top" style="top: 80px">
+<div class="row sticky-top profile-card" style="top: 88px">
     <div class="col">
         <div class="card border-0 shadow-sm bg-white">
             <div class="card-body px-4 pt-4 pb-3">
@@ -9,32 +9,32 @@
                         <div class="figure d-none d-md-block">
                             <img 
                                 src="{{ site.data.profile.portrait_url | relative_url }}" 
-                                class="figure-img img-fluid" 
+                                class="figure-img img-fluid profile-portrait" alt="Portrait of {{ site.data.profile.primary_name }}" 
                                 data-toggle="tooltip" 
                                 data-placement="top" 
                                 title="{{ site.data.profile.portrait_caption }}">
                         </div>
                         <div class="mb-3 d-md-none text-center">
-                            <img src="{{ site.data.profile.portrait_url | relative_url }}" class="rounded-circle" style="max-width: 50%;" alt="Portrait">
+                            <img src="{{ site.data.profile.portrait_url | relative_url }}" class="rounded-circle profile-portrait-mobile" alt="Portrait of {{ site.data.profile.primary_name }}">
                         </div>
                         {% endif %}
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col text-center h4">
+                    <div class="col text-center profile-name">
                         {{ site.data.profile.primary_name }}
                     </div>
                 </div>
 
                 <div class="row small">
-                    <div class="col text-center">
+                    <div class="col text-center profile-positions">
                         {% for position in site.data.profile.positions %}
-                        {{ position.name }}<br/>
+                        <div>{{ position.name }}</div>
                         {% endfor %}
                     </div>
                 </div>
 
-                <div class="row pt-2">
+                <div class="row pt-3">
                     <div class="col text-center profile-socials">
                         {% if site.data.profile.email %}
                         <a class="profile-social-link no-break" href="mailto:{{ site.data.profile.email | encode_email }}" aria-label="Email" title="Email">

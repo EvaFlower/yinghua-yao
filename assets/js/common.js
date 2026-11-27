@@ -90,4 +90,47 @@ $(function () {
             showPublicationCover($(this));
         }
     });
+
+    // Highlight the navbar link of the section currently in view (homepage only).
+    var $sectionLinks = $('.navbar-nav .nav-link').filter(function () {
+        var hash = this.hash;
+        return hash && this.pathname === window.location.pathname && document.getElementById(hash.slice(1));
+    });
+    if ($sectionLinks.length) {
+        var $homeItem = $('.navbar-nav .nav-item.active').first();
+        var updateActiveSection = function () {
+            var offset = 120;
+            var current = null;
+            $sectionLinks.each(function () {
+                var section = document.getElementById(this.hash.slice(1));
+                if (section.getBoundingClientRect().top - offset <= 0) {
+                    current = this;
+                }
+            });
+            $('.navbar-nav .nav-item').removeClass('active');
+            (current ? $(current).closest('.nav-item') : $homeItem).addClass('active');
+        };
+        $(window).on('scroll resize', updateActiveSection);
+        updateActiveSection();
+
+        // Close the mobile menu after picking a section.
+        $sectionLinks.on('click', function () {
+            $('#navbarResponsive').collapse('hide');
+        });
+    }
+
+    // The layout shifts while fonts and images load, so re-align to the requested section afterwards.
+    var realignToHash = function () {
+        var target = window.location.hash && document.getElementById(window.location.hash.slice(1));
+        if (target) {
+            setTimeout(function () {
+                target.scrollIntoView({behavior: 'instant', block: 'start'});
+            }, 150);
+        }
+    };
+    if (document.readyState === 'complete') {
+        realignToHash();
+    } else {
+        $(window).on('load', realignToHash);
+    }
 })

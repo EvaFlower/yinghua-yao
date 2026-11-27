@@ -9,7 +9,7 @@ cover: /assets/images/covers/vis-p-mpnn.png
 authors:
 - N. Tamatgar*
 - S. Park*
-- Y. Yao#*
+- Y. Yao#
 - X. Chen
 - Y. Pan
 ---
