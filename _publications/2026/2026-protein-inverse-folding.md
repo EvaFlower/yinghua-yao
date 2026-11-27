@@ -6,10 +6,13 @@ pub: "SIGKDD Conference on Knowledge Discovery and Data Mining (KDD)"
 pub_date: "2026"
 pub_last: ' <span class="badge badge-pill badge-publication badge-success">CCF A</span>'
 cover: /assets/images/covers/vis-p-mpnn.png
+links:
+  PDF: https://dl.acm.org/doi/10.1145/3770855.3818896
+  Code: https://github.com/EvaFlower/Function-aware-Protein-Inverse-Folding
 authors:
 - N. Tamatgar*
 - S. Park*
-- Y. Yao#*
+- Y. Yao#
 - X. Chen
 - Y. Pan
 ---

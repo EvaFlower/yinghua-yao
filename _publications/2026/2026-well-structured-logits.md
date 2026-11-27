@@ -4,6 +4,7 @@ date: 2026-04-21 00:01:00 +0800
 selected: false
 pub: "International Joint Conference on Artificial Intelligence (IJCAI)"
 pub_date: "2026"
+pub_last: ' <span class="badge badge-pill badge-publication badge-success">CCF B</span>'
 cover: /assets/images/covers/vlco.png
 authors:
 - J. Lin

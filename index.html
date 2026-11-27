@@ -27,15 +27,15 @@ navbar_title: Home
             <div class="col">
                 <div class="card border-0 shadow-sm bg-white">
                     <div class="card-body p-4">
-                        <h3 class="mb-3">Projects</h3>
+                        <h3 class="section-title">Projects</h3>
                         <ul class="list-unstyled mb-0">
                             {% for project in site.data.projects %}
-                            <li class="media mb-3">
-                                <div class="mr-3 text-muted"><i class="fas fa-diagram-project"></i></div>
+                            <li class="media item-row">
+                                <div class="item-icon"><i class="fas fa-diagram-project"></i></div>
                                 <div class="media-body">
                                     <div class="d-flex">
                                         <div>{{ project.title }}</div>
-                                        <div class="ml-auto no-break"><em>{{ project.period }}</em></div>
+                                        <div class="ml-auto no-break item-date">{{ project.period }}</div>
                                     </div>
                                     <div class="small text-muted">
                                         {{ project.program }}{% if project.role %}, {{ project.role }}{% endif %}{% if project.funding %}, {{ project.funding }}{% endif %}
@@ -56,15 +56,15 @@ navbar_title: Home
             <div class="col">
                 <div class="card border-0 shadow-sm bg-white">
                     <div class="card-body p-4">
-                        <h3 class="mb-3">Awards</h3>
+                        <h3 class="section-title">Awards</h3>
                         <ul class="list-unstyled mb-0">
                             {% for award in site.data.awards %}
-                            <li class="media mb-3">
-                                <div class="mr-3 text-muted"><i class="fas fa-award"></i></div>
+                            <li class="media item-row">
+                                <div class="item-icon"><i class="fas fa-award"></i></div>
                                 <div class="media-body">
                                     <div class="d-flex">
                                         <div>{{ award.name }}</div>
-                                        <div class="ml-auto no-break"><em>{{ award.date }}</em></div>
+                                        <div class="ml-auto no-break item-date">{{ award.date }}</div>
                                     </div>
                                     {% if award.note %}
                                     <div class="small text-muted">{{ award.note }}</div>
@@ -82,16 +82,33 @@ navbar_title: Home
             <div class="col">
                 <div class="card border-0 shadow-sm bg-white">
                     <div class="card-body p-4">
-                        <h3 class="mb-3">Services</h3>
-                        <div class="row">
-                            {% for role in site.data.services.roles %}
-                            <div class="col-md-4 mb-3">
-                                <h6>{{ role.name }}</h6>
-                                <ul class="list small pl-3 mb-0">
-                                    {% for item in role.items %}
-                                    <li>
-                                        {{ item.venue }}{% if item.date %}, {{ item.date }}{% endif %}
-                                    </li>
+                        <h3 class="section-title">Services</h3>
+                        <ul class="list-unstyled mb-0 service-list">
+                            {% for item in site.data.services.leadership %}
+                            <li class="media item-row">
+                                <div class="item-icon"><i class="fas {{ item.icon | default: 'fa-handshake' }}"></i></div>
+                                <div class="media-body">
+                                    <div class="service-role">{{ item.role }}</div>
+                                    <div class="d-flex">
+                                        <div>
+                                            {% if item.url %}<a href="{{ item.url }}" target="_blank">{{ item.title }} <i class="fas fa-arrow-up-right-from-square service-link-icon"></i></a>{% else %}{{ item.title }}{% endif %}
+                                        </div>
+                                        <div class="ml-auto no-break item-date">{{ item.date }}</div>
+                                    </div>
+                                    {% if item.venue or item.note %}
+                                    <div class="small text-muted">{{ item.venue }}{% if item.venue and item.note %} &middot; {% endif %}{{ item.note }}</div>
+                                    {% endif %}
+                                </div>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        <div class="row service-reviewing">
+                            {% for group in site.data.services.reviewing %}
+                            <div class="col-md-6 mt-3">
+                                <h6 class="subsection-title">{{ group.name }}</h6>
+                                <ul class="list-unstyled tag-list mb-0">
+                                    {% for item in group.items %}
+                                    <li{% if item.full %} title="{{ item.full }}"{% endif %}>{{ item.venue }}</li>
                                     {% endfor %}
                                 </ul>
                             </div>
@@ -106,15 +123,15 @@ navbar_title: Home
             <div class="col">
                 <div class="card border-0 shadow-sm bg-white">
                     <div class="card-body p-4">
-                        <h3 class="mb-3">Invited Talks</h3>
+                        <h3 class="section-title">Invited Talks</h3>
                         <ul class="list-unstyled mb-0">
                             {% for talk in site.data.invited_talks %}
-                            <li class="media mb-3">
-                                <div class="mr-3 text-muted"><i class="fas fa-microphone"></i></div>
+                            <li class="media item-row">
+                                <div class="item-icon"><i class="fas fa-microphone"></i></div>
                                 <div class="media-body">
                                     <div class="d-flex">
                                         <div>"{{ talk.title }}"</div>
-                                        <div class="ml-auto no-break"><em>{{ talk.date }}</em></div>
+                                        <div class="ml-auto no-break item-date">{{ talk.date }}</div>
                                     </div>
                                     <div class="small text-muted">{{ talk.venue }}{% if talk.location %}, {{ talk.location }}{% endif %}</div>
                                 </div>
@@ -130,10 +147,10 @@ navbar_title: Home
             <div class="col">
                 <div class="card border-0 shadow-sm bg-white">
                     <div class="card-body p-4">
-                        <h3 class="mb-3">Students</h3>
+                        <h3 class="section-title">Students</h3>
                         <div class="row">
                             <div class="col-md-6 mb-3">
-                                <h6>PhD Students</h6>
+                                <h6 class="subsection-title">PhD Students</h6>
                                 <ul class="list small pl-3 mb-0">
                                     {% for student in site.data.people.phd_students %}
                                     <li>{{ student.name }}{% if student.note %} ({{ student.note }}){% endif %}</li>
@@ -141,7 +158,7 @@ navbar_title: Home
                                 </ul>
                             </div>
                             <div class="col-md-6 mb-3">
-                                <h6>Master Students</h6>
+                                <h6 class="subsection-title">Master Students</h6>
                                 <ul class="list small pl-3 mb-0">
                                     {% for student in site.data.people.master_students %}
                                     <li>{{ student.name }}{% if student.note %} ({{ student.note }}){% endif %}</li>
@@ -149,7 +166,7 @@ navbar_title: Home
                                 </ul>
                             </div>
                             <div class="col-12">
-                                <h6>Alumni</h6>
+                                <h6 class="subsection-title">Alumni</h6>
                                 <ul class="list small pl-3 mb-0">
                                     {% for student in site.data.people.alumni %}
                                     <li>{{ student.name }}{% if student.note %} ({{ student.note }}){% endif %}</li>
@@ -167,7 +184,7 @@ navbar_title: Home
         {%
         include widgets/publication_card.html
         publications=pubs
-        title='<i class="fas fa-star"></i> Selected Publications'
+        title='Selected Publications'
         %}
         {% endif %}
     </div>
