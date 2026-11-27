@@ -148,31 +148,29 @@ navbar_title: Home
                 <div class="card border-0 shadow-sm bg-white">
                     <div class="card-body p-4">
                         <h3 class="section-title">Students</h3>
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <h6 class="subsection-title">PhD Students</h6>
-                                <ul class="list small pl-3 mb-0">
-                                    {% for student in site.data.people.phd_students %}
-                                    <li>{{ student.name }}{% if student.note %} ({{ student.note }}){% endif %}</li>
-                                    {% endfor %}
-                                </ul>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <h6 class="subsection-title">Master Students</h6>
-                                <ul class="list small pl-3 mb-0">
-                                    {% for student in site.data.people.master_students %}
-                                    <li>{{ student.name }}{% if student.note %} ({{ student.note }}){% endif %}</li>
-                                    {% endfor %}
-                                </ul>
-                            </div>
-                            <div class="col-12">
-                                <h6 class="subsection-title">Alumni</h6>
-                                <ul class="list small pl-3 mb-0">
-                                    {% for student in site.data.people.alumni %}
-                                    <li>{{ student.name }}{% if student.note %} ({{ student.note }}){% endif %}</li>
-                                    {% endfor %}
-                                </ul>
-                            </div>
+                        <div class="student-group">
+                            <h6 class="subsection-title">PhD Students</h6>
+                            <ul class="list small pl-3 mb-0">
+                                {% for student in site.data.people.phd_students %}
+                                <li>{{ student.name }}{% if student.note %} ({{ student.note }}){% endif %}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <div class="student-group">
+                            <h6 class="subsection-title">Master Students</h6>
+                            <ul class="list small pl-3 mb-0">
+                                {% for student in site.data.people.master_students %}
+                                <li>{{ student.name }}{% if student.note %} ({{ student.note }}){% endif %}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <div class="student-group">
+                            <h6 class="subsection-title">Alumni</h6>
+                            <ul class="list small pl-3 mb-0">
+                                {% for student in site.data.people.alumni %}
+                                <li>{{ student.name }}{% if student.note %} ({{ student.note }}){% endif %}</li>
+                                {% endfor %}
+                            </ul>
                         </div>
                     </div>
                 </div>

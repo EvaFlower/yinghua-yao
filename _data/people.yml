@@ -1,32 +1,29 @@
 phd_students:
-- name: Andrea Zerio
-  note: PhD candidate at Aalborg University, Denmark
 - name: Samal Mukhtar
-  note: PhD candidate at University of Manchester, A*STAR ARAP joint PhD scholarship
+  note: PhD candidate at University of Manchester, A*STAR ARAP joint PhD scholarship; Sept 2025-present
+- name: Andrea Zerio
+  note: PhD candidate at Aalborg University, Denmark; Mar 2026-present, <strong>GEM@NeurIPS*1</strong>
 - name: Ziming Wang
-  note: PhD candidate at Southern University of Science and Technology
+  note: PhD candidate at Southern University of Science and Technology; Jun 2026-present
 - name: Zisen Kong
-  note: PhD candidate at Beijing Jiaotong University
+  note: PhD candidate at Beijing Jiaotong University; Sept 2026-present
 
 master_students:
 - name: Kehan Liu
-  note: NUS
+  note: NUS; Nov 2025-present
 
 alumni:
-- name: Bai Yucheng
-  note: NTU master
 - name: Xu Ziyang
-  note: NUS master
+  note: NUS master; May 2025-May 2026, <strong>ICLR*1</strong>
+- name: Bai Yucheng
+  note: NTU master; Dec 2025-May 2026
 - name: Ananthu Rajendran Pillai
-  note: NTU master
+  note: NTU master; Jun 2025-Feb 2026, <strong>ICLR*1</strong>
 - name: Soobin Park
-  note: Yonsei University bachelor
+  note: Yonsei University bachelor; Sept 2025-Dec 2025, <strong>KDD*1</strong>
 - name: Guo Huixuan
-  note: NTU bachelor, Singapore; now PhD candidate at MIT
+  note: NTU bachelor, Singapore, now PhD candidate at MIT; Jan 2024-Jun 2025, <strong>patent filed</strong>
 - name: Nilufer Tamatgar
-  note: NTU
+  note: NTU master; Feb 2025-Oct 2026, <strong>KDD*1</strong>
 - name: Lehan Hong
-  note: TUST
-- name: Chunyi Li
-  note: PhD candidate at SJTU
-  
+  note: TUST master; <strong>GEM@NeurIPS*1</strong>
