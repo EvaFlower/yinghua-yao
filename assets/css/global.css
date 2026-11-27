@@ -644,3 +644,8 @@ div.lazy {
     text-decoration-color: #b9cfe2;
     text-underline-offset: 2px;
 }
+
+/* ---------- Students ---------- */
+.student-group + .student-group {
+    margin-top: 1.1rem;
+}
