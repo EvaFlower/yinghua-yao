@@ -26,6 +26,8 @@ reviewing:
   - venue: NeurIPS
   - venue: ICLR
   - venue: AAAI
+  - venue: EMNLP
+  - venue: CVPR
   - venue: ACML
   - venue: ICONIP
 - name: Journal Reviewer
